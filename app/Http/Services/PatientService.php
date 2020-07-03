@@ -10,8 +10,7 @@ class PatientService
     {
         $search = $attributes['search'];
 
-        return Patient::where('id', $search)
-            ->orWhere('pasNumber', 'LIKE', "%$search%")
+        return Patient::where('pasNumber', 'LIKE', "%$search%")
             ->orWhere('forenames', 'LIKE', "%$search%")
             ->orWhere('surname', 'LIKE', "%$search%")
             ->get();
